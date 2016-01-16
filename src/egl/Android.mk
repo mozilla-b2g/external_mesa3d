@@ -54,7 +54,7 @@ endif
 LOCAL_C_INCLUDES := \
 	$(MESA_TOP)/src/egl/main \
 	$(MESA_TOP)/src/egl/drivers/dri2 \
-	external/drm_gralloc
+	hardware/drm_gralloc
 
 LOCAL_STATIC_LIBRARIES := \
 	libmesa_loader
