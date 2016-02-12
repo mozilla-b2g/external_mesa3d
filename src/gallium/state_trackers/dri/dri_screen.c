@@ -109,6 +109,7 @@ dri_fill_in_modes(struct dri_screen *screen)
       MESA_FORMAT_B8G8R8A8_SRGB,
       MESA_FORMAT_B8G8R8X8_SRGB,
       MESA_FORMAT_B5G6R5_UNORM,
+      MESA_FORMAT_R8G8B8A8_UNORM,
    };
    static const enum pipe_format pipe_formats[] = {
       PIPE_FORMAT_BGRA8888_UNORM,
@@ -116,6 +117,7 @@ dri_fill_in_modes(struct dri_screen *screen)
       PIPE_FORMAT_BGRA8888_SRGB,
       PIPE_FORMAT_BGRX8888_SRGB,
       PIPE_FORMAT_B5G6R5_UNORM,
+      PIPE_FORMAT_RGBA8888_UNORM,
    };
    mesa_format format;
    __DRIconfig **configs = NULL;

@@ -49,6 +49,11 @@ LOCAL_SRC_FILES += $(dri2_SOURCES)
 LOCAL_SHARED_LIBRARIES := libdrm
 endif
 
+ifeq ($(strip $(MESA_BUILD_DEBUG)),true)
+LOCAL_CFLGAS += -g -O0
+LOCAL_SHARED_LIBRARIES += libcutils liblog
+endif
+
 LOCAL_MODULE := libmesa_st_dri
 
 LOCAL_GENERATED_SOURCES := $(MESA_DRI_OPTIONS_H)

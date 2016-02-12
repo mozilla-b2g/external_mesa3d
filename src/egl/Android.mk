@@ -43,6 +43,10 @@ LOCAL_CFLAGS := \
 	-D_EGL_BUILT_IN_DRIVER_DRI2 \
 	-DHAVE_ANDROID_PLATFORM
 
+ifeq ($(strip $(MESA_BUILD_DEBUG)),true)
+LOCAL_CFLGAS +=	-g -O0
+endif
+
 ifeq ($(MESA_LOLLIPOP_BUILD),true)
 LOCAL_CFLAGS_arm := -DDEFAULT_DRIVER_DIR=\"/system/lib/dri\"
 LOCAL_CFLAGS_x86 := -DDEFAULT_DRIVER_DIR=\"/system/lib/dri\"
@@ -54,6 +58,7 @@ endif
 LOCAL_C_INCLUDES := \
 	$(MESA_TOP)/src/egl/main \
 	$(MESA_TOP)/src/egl/drivers/dri2 \
+	hardware/drm_gralloc \
 
 LOCAL_STATIC_LIBRARIES := \
 	libmesa_loader

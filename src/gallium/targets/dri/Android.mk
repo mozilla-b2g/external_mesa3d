@@ -35,12 +35,16 @@ endif
 
 LOCAL_SRC_FILES := target.c
 
-LOCAL_CFLAGS :=
-
 LOCAL_SHARED_LIBRARIES := \
 	libdl \
 	libglapi \
-	libexpat \
+	libexpat
+
+ifeq ($(strip $(MESA_BUILD_DEBUG)),true)
+LOCAL_CFLGAS += -g -O0
+LOCAL_SHARED_LIBRARIES += libcutils liblog
+endif
+
 
 ifneq ($(filter-out swrast,$(MESA_GPU_DRIVERS)),)
 LOCAL_CFLAGS += -DHAVE_LIBDRM

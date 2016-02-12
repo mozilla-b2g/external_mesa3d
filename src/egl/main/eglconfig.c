@@ -246,6 +246,9 @@ static const struct {
    /* extensions */
    { EGL_Y_INVERTED_NOK,            ATTRIB_TYPE_BOOLEAN,
                                     ATTRIB_CRITERION_EXACT,
+                                    EGL_DONT_CARE },
+   { EGL_FRAMEBUFFER_TARGET_ANDROID, ATTRIB_TYPE_BOOLEAN,
+                                    ATTRIB_CRITERION_EXACT,
                                     EGL_DONT_CARE }
 };
 
